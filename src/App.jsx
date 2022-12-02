@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Coins from './pages/Coins/Coins'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -60,6 +61,12 @@ const App = () => {
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
             </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/coins'
+          element={
+            <Coins />
           }
         />
       </Routes>
