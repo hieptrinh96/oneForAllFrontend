@@ -5,8 +5,8 @@ const Coins = () => {
   const [coins, setCoins] = useState([])
   useEffect(() => {
     const fetchCoinsData = async () => {
-      const coins = await getAllCoins()
-      setCoins(coins.data)
+      const coinsData = await getAllCoins()
+      setCoins(coinsData.data)
     }
     fetchCoinsData()
   }, [])
@@ -15,7 +15,10 @@ const Coins = () => {
     <h2>List of Coins</h2>
     <div className="all-coins">
       {coins.map(coin =>
-        <p>{coin.id}</p>
+        <div key={coin.id}>
+          <p>{coin.name}</p>
+          <p>{coin.priceUsd}</p>
+        </div>
         )}
     </div>
     </div>

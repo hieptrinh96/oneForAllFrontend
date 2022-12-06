@@ -67,8 +67,7 @@ const App = () => {
           path='/coins'
           element={
             <Coins />
-          }
-        />
+          } />
       </Routes>
     </>
   )
