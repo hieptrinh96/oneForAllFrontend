@@ -17,7 +17,7 @@ const Coins = () => {
       {coins.map(coin =>
         <div key={coin.id}>
           <p>{coin.name}</p>
-          <p>{coin.priceUsd}</p>
+          <p>${coin.priceUsd}</p>
         </div>
         )}
     </div>
