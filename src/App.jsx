@@ -9,7 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Coins from './pages/Coins/Coins'
-
+import CoinDetails from './pages/CoinDetails/CoinDetails'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -68,6 +68,12 @@ const App = () => {
           element={
             <Coins />
           } />
+          <Route
+            path='/coins/coinsDetail'
+            element={
+              <CoinDetails />
+            }
+          />
       </Routes>
     </>
   )
