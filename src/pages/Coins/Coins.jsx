@@ -17,8 +17,8 @@ const Coins = () => {
     <div className="all-coins">
       {coins.map(coin =>
         <Link
-          to='/coins/coinDetails'
-          state={{coin}}
+          to='/coins/coinsDetail'
+          state={{coin : coin}}
           key={coin.id}>
             {coin.name}
         </Link>

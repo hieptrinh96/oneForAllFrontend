@@ -4,7 +4,12 @@ export async function getAllCoins() {
   return res.json()
 }
 
-export async function getCoinDetails(apiUrl) {
-  const res = await fetch(`${apiUrl}`)
+export async function getCoinDetails(coinId) {
+  const res = await fetch(`${baseURL}/assets/${coinId}`)
+  return res.json()
+}
+
+export async function getCoinPrice(coinId) {
+  const res = await fetch(`${baseURL}/assets/${coinId}/history?interval=m1`)
   return res.json()
 }
