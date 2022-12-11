@@ -16,10 +16,12 @@ const Coins = () => {
     <h2>List of Coins</h2>
     <div className="all-coins">
       {coins.map(coin =>
-        <div key={coin.id}>
-          <p>{coin.name}</p>
-          <p>${coin.priceUsd}</p>
-        </div>
+        <Link
+          to='/coins/coinDetails'
+          state={{coin}}
+          key={coin.id}>
+            {coin.name}
+        </Link>
         )}
     </div>
     </div>

@@ -7,9 +7,11 @@ const CoinDetails = () => {
   const location = useLocation()
   useEffect(() => {
     const fetchCoinsDetail = async () => {
-      const coinData = await getCoinDetails(location.state.starship.url)
+      const coinData = await getCoinDetails(location.state.coin.url)
+      setCoinDetail(coinData)
     }
-  })
+    fetchCoinsDetail()
+  }, [location.state.coin.url])
   return (
     <div>
       <h2>Coin Details</h2>
