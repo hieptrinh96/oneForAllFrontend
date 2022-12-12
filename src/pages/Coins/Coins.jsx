@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getAllCoins } from "../../services/coins-api";
-
+import styles from './Coins.module.css'
 const Coins = () => {
   const [coins, setCoins] = useState([])
   useEffect(() => {
@@ -20,7 +20,7 @@ const Coins = () => {
           to='/coins/coinsDetail'
           state={{coin : coin}}
           key={coin.id}>
-            {coin.name}
+            <div>{coin.name}</div>
         </Link>
         )}
     </div>
