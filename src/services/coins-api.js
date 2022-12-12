@@ -10,6 +10,6 @@ export async function getCoinDetails(coinId) {
 }
 
 export async function getCoinPrice(coinId) {
-  const res = await fetch(`${baseURL}/assets/${coinId}/history?interval=m1`)
+  const res = await fetch(`${baseURL}/assets/${coinId}/history?interval=d1`)
   return res.json()
 }
