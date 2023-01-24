@@ -7,7 +7,7 @@ const CoinDetails = () => {
   const location = useLocation()
   useEffect(() => {
     const fetchCoinsDetail = async () => {
-      const coinData = await coinService.getCoinDetails(location.state.coin.id)
+      const coinData = await coinService.getCoinDetails(coin.id)
       setCoinDetail(coinData.data)
     }
     fetchCoinsDetail()

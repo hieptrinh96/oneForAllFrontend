@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
@@ -16,12 +16,14 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
-
+import * as coinService from './services/coins-api'
+import * as profileService from './services/profileService'
 // styles
 import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [coins, setCoins] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -32,6 +34,11 @@ const App = () => {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleAddCoin = async (coinData) => {
+    const newCoin = await coinService.addCoinToWallet(coinData)
+    setCoins([...coins, newCoin])
   }
 
   return (
