@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Coins from './pages/Coins/Coins'
 import CoinDetails from './pages/CoinDetails/CoinDetails'
+import AddCoin from './pages/AddCoin/AddCoin'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -38,7 +39,9 @@ const App = () => {
 
   const handleAddCoin = async (coinData) => {
     const newCoin = await coinService.addCoinToWallet(coinData)
+    console.log(coinData)
     setCoins([...coins, newCoin])
+    navigate('/coins')
   }
 
   return (
@@ -78,8 +81,16 @@ const App = () => {
           <Route
             path='/coins/coinsDetail'
             element={
-              <CoinDetails />
+              <CoinDetails handleAddCoin={handleAddCoin}/>
             }
+          />
+          <Route 
+          path='/add-coin'
+          element={
+            <ProtectedRoute user={user}>
+              <AddCoin handleAddCoin={handleAddCoin}/>
+            </ProtectedRoute>
+          }
           />
       </Routes>
     </>

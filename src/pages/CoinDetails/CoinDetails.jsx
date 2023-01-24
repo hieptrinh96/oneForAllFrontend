@@ -1,32 +1,16 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import * as coinService from "../../services/coins-api";
-import { Link } from "react-router-dom";
-const CoinDetails = () => {
-  const [coinDetail, setCoinDetail] = useState([])
-  const location = useLocation()
-  useEffect(() => {
-    const fetchCoinsDetail = async () => {
-      const coinData = await coinService.getCoinDetails(coin.id)
-      setCoinDetail(coinData.data)
-    }
-    fetchCoinsDetail()
-  }, [location.state.coin.id])
-
-  const handleAddCoin = async () => {
-    const coinData = await coinService.addCoinToWallet(coinDetail)
-  }
-
+import { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom"
+const CoinDetails = (props) => {
+  const { state } = useLocation()
+  
   return (
     <div>
-      <h2>Coin Details</h2>
       <div>
-        <p>Rank: {coinDetail.rank}</p>
-        <p>Symbol: {coinDetail.symbol}</p>
-        <p>Price: ${coinDetail.priceUsd}</p>
-        <button onClick={() => handleAddCoin()}>Add to wallet</button>
+        <p>Rank: {state.rank}</p>
+        <p>Symbol: {state.symbol}</p>
+        <p>Price: ${state.priceUsd}</p>
+        <button onClick={() => props.handleAddCoin(state)}>Save Coin</button>
       </div>
-      
     </div>
   );
 }
