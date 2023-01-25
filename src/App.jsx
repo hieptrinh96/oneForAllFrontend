@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Coins from './pages/Coins/Coins'
 import CoinDetails from './pages/CoinDetails/CoinDetails'
 import AddCoin from './pages/AddCoin/AddCoin'
+import MyCoins from './pages/MyCoins/MyCoins'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -89,6 +90,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <AddCoin handleAddCoin={handleAddCoin}/>
+            </ProtectedRoute>
+          }
+          />
+          <Route 
+          path='/myCoins'
+          element={
+            <ProtectedRoute user={user}>
+              <MyCoins coins={coins}/>
             </ProtectedRoute>
           }
           />
