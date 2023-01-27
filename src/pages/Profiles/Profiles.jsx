@@ -20,7 +20,8 @@ const Profiles = () => {
         <>
           {profiles.map(profile =>
             <Link  to='/profile-detail'key={profile._id} state={profile}><p>{profile.name}</p></Link>
-          )}
+            )}
+            <p>{console.log(profiles)}</p>
         </>
       :
         <p>No profiles yet</p>
