@@ -12,6 +12,7 @@ import Coins from './pages/Coins/Coins'
 import CoinDetails from './pages/CoinDetails/CoinDetails'
 import AddCoin from './pages/AddCoin/AddCoin'
 import MyCoins from './pages/MyCoins/MyCoins'
+import ProfileDetail from './pages/ProfileDetail/ProfileDetail'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -98,6 +99,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <MyCoins coins={coins}/>
+            </ProtectedRoute>
+          }
+          />
+          <Route 
+          path='/profile-detail'
+          element={
+            <ProtectedRoute user={user}>
+              <ProfileDetail />
             </ProtectedRoute>
           }
           />
