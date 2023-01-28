@@ -45,6 +45,13 @@ const App = () => {
     setCoins([...coins, newCoin])
     navigate('/coins')
   }
+    useEffect(() => {
+    const showMyCoins = async () => {
+      const myCoins = await profileService.showMyCoins(user.profile)
+      setCoins(myCoins)
+    }
+    showMyCoins()
+  }, [user.profile])
 
   return (
     <>

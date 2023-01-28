@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import * as profileService from '../../services/profileService'
-
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
-
   useEffect(() => {
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
@@ -21,7 +19,6 @@ const Profiles = () => {
           {profiles.map(profile =>
             <Link  to='/profile-detail'key={profile._id} state={profile}><p>{profile.name}</p></Link>
             )}
-            <p>{console.log(profiles)}</p>
         </>
       :
         <p>No profiles yet</p>
