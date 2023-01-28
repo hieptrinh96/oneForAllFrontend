@@ -10,7 +10,6 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Coins from './pages/Coins/Coins'
 import CoinDetails from './pages/CoinDetails/CoinDetails'
-import AddCoin from './pages/AddCoin/AddCoin'
 import MyWallet from './pages/MyWallet/MyWallet'
 import ProfileDetail from './pages/ProfileDetail/ProfileDetail'
 
@@ -44,15 +43,15 @@ const App = () => {
     const newCoin = await coinService.addCoinToWallet(coinData)
     console.log(coinData)
     setCoins([...coins, newCoin])
-    navigate('/coins')
+    navigate('/myWallet')
   }
     useEffect(() => {
     const showMyCoins = async () => {
       const myCoins = await profileService.showMyCoins(user.profile)
       setCoins(myCoins)
     }
-    showMyCoins()
-  }, [user.profile])
+    if (user) showMyCoins()
+  }, [user])
 
   return (
     <>
@@ -93,14 +92,6 @@ const App = () => {
             element={
               <CoinDetails handleAddCoin={handleAddCoin}/>
             }
-          />
-          <Route 
-          path='/add-coin'
-          element={
-            <ProtectedRoute user={user}>
-              <AddCoin handleAddCoin={handleAddCoin}/>
-            </ProtectedRoute>
-          }
           />
           <Route 
           path='/myWallet'

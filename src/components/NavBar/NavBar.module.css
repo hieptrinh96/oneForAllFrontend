@@ -1,8 +1,5 @@
-.logoutContainer {
-  list-style: none;
-  margin-left: 0;
+.loggedin-container {
   display: flex;
-  justify-content: end;
-  margin-right: 20px;
-  gap: 10px;
+  list-style: none;
+  justify-content: space-between;
 }

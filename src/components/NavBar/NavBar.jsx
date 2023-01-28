@@ -4,16 +4,14 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <nav>
       {user ?
-        <ul>
-          <li>Welcome, {user.name}</li>
-          <li><Link to="/profiles">Profiles</Link></li>
+        <ul className={styles['loggedin-container']}>
           <li><Link to='/myWallet'>My Wallet</Link></li>
           <li><Link to='/coins'>All Coins</Link></li>
-          <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
           <li><Link to="/changePassword">Change Password</Link></li>
+          <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
         </ul>
       :
-        <ul className={styles.logoutContainer}>
+        <ul className={styles['logout-container']}>
           <li><Link to="/login">Log In</Link></li>
           <li><Link to="/signup">Sign Up</Link></li>
         </ul>
