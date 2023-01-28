@@ -11,8 +11,9 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Coins from './pages/Coins/Coins'
 import CoinDetails from './pages/CoinDetails/CoinDetails'
 import AddCoin from './pages/AddCoin/AddCoin'
-import MyCoins from './pages/MyCoins/MyCoins'
+import MyWallet from './pages/MyWallet/MyWallet'
 import ProfileDetail from './pages/ProfileDetail/ProfileDetail'
+
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -102,10 +103,10 @@ const App = () => {
           }
           />
           <Route 
-          path='/myCoins'
+          path='/myWallet'
           element={
             <ProtectedRoute user={user}>
-              <MyCoins coins={coins}/>
+              <MyWallet coins={coins}/>
             </ProtectedRoute>
           }
           />

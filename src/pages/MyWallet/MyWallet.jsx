@@ -1,4 +1,4 @@
-const MyCoins = ({coins}) => {
+const MyWallet = ({coins}) => {
 
   return (
     <>
@@ -6,9 +6,10 @@ const MyCoins = ({coins}) => {
     <div>
       {coins.map(coin => 
         <div key={coin.id}>
-          {console.log('hello', coin._id)}
+          <div>
           <p>{coin.rank}</p>
           <p>{coin.name}</p>
+          </div>
         </div>  
       )}
     </div>
@@ -16,4 +17,4 @@ const MyCoins = ({coins}) => {
   );
 }
  
-export default MyCoins;
+export default MyWallet;
