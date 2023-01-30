@@ -8,7 +8,7 @@ const NavBar = ({ user, handleLogout }) => {
           <h2><li><Link to='/myWallet'>My Wallet</Link></li></h2>
           <h2><li><Link to='/coins'>All Coins</Link></li></h2>
           <h2><li><Link to="/changePassword">Change Password</Link></li></h2>
-          <h2><li><Link to="" onClick={handleLogout}>LOG OUT</Link></li></h2>
+          <h2><li><Link to="" onClick={handleLogout}>Log Out</Link></li></h2>
         </ul>
       :
         <ul className={styles['logout-container']}>
