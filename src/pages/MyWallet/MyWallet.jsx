@@ -17,7 +17,7 @@ const MyWallet = ({coins}) => {
           <p>{coin.rank}</p>
           <p>{coin.symbol}</p>
           <p>{coin.name}</p>
-          <p>${coin.priceUsd}</p>
+          <p>${parseFloat(coin.priceUsd).toFixed(4)}</p>
           <p>{coin.supply}</p>
           <p>{coin.maxSupply}</p>
           </div>
