@@ -13,9 +13,9 @@ const Coins = () => {
     fetchCoinsData()
   }, [])
   return (
-    <div>
+    <div className={styles["coins-container"]}>
     <h2>List of Coins</h2>
-    <div className="all-coins">
+    <div className={styles["all-coins"]}>
       {coins.map(coin =>
         <Link 
           to='/coins/coinsDetail'  
