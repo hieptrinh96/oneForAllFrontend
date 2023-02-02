@@ -7,6 +7,10 @@ header {
   margin-left: 20px;
 }
 
+.headerContainer {
+  text-decoration: underline;
+}
+
 .link-container {
   color: black;
 }
