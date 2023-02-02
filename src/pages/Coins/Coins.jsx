@@ -14,7 +14,7 @@ const Coins = () => {
   }, [])
   return (
     <>
-    <h2>List of Coins</h2>
+    <h2 className={styles["header"]}>List of Coins</h2>
     <div className={styles.headerContainer}>
       <h2>Rank</h2>
       <h2>Symbol</h2>
@@ -28,10 +28,12 @@ const Coins = () => {
         <Link 
           to='/coins/coinsDetail'  
           key={coin.id}
-          state={coin}>
-            <p>{coin.name}</p>
+          state={coin}
+          className={styles['link-container']}>
             <p>{coin.rank}</p>
             <p>{coin.symbol}</p>
+            <p>{coin.name}</p>
+            <p>{coin.priceUsd}</p>
             <p>{coin.supply}</p>
             <p>{coin.maxSupply}</p>
         </Link>

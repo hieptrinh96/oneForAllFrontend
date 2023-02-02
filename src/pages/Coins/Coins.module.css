@@ -1,3 +1,16 @@
-.coins-container>h2 {
+header {
   text-align: center;
+}
+.headerContainer, .link-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-left: 20px;
+}
+
+.link-container {
+  color: black;
+}
+
+.link-container:hover {
+  border: 1px solid black;
 }
