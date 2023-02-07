@@ -19,7 +19,11 @@ const MyWallet = ({coins}) => {
           <p>{coin.name}</p>
           <p>${parseFloat(coin.priceUsd).toLocaleString()}</p>
           <p>{parseFloat(coin.supply).toLocaleString()}</p>
-          <p>{coin.maxSupply}</p>
+          {coin.maxSupply ?
+            <p>{coin.maxSupply}</p>  
+            :
+            <p>External API isn't working properly</p>
+        }
           </div>
         </div>  
       )}
