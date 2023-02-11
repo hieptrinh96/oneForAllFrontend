@@ -45,6 +45,15 @@ const App = () => {
     setCoins([...coins, newCoin])
     navigate('/myWallet')
   }
+
+  const handleDeleteCoin = async (id) => {
+    const deletedCoin = await profileService.deleteCoin(id)
+    setCoins(
+      coins.filter((coin) => coin._id !== deletedCoin._id)
+    )
+    navigate('/myWallet')
+  }
+
     useEffect(() => {
     const showMyCoins = async () => {
       const myCoins = await profileService.showMyCoins(user.profile)
@@ -90,7 +99,10 @@ const App = () => {
           <Route
             path='/coins/coinsDetail'
             element={
-              <CoinDetails handleAddCoin={handleAddCoin}/>
+              <CoinDetails 
+              handleAddCoin={handleAddCoin}
+              handleDeleteCoin={handleDeleteCoin}
+              />
             }
           />
           <Route 

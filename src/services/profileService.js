@@ -27,8 +27,23 @@ async function showMyCoins(profileId) {
   return await res.json()
 }
 
+async function deleteCoin(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/coins/${id}`, {
+      method: 'delete',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      }
+    })
+    return res.json()
+  } catch(error) {
+    console.log(error)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto,
-  showMyCoins
+  showMyCoins,
+  deleteCoin
 }
