@@ -1,7 +1,7 @@
 // npm modules
 import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 // page components
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
@@ -14,7 +14,7 @@ import MyWallet from './pages/MyWallet/MyWallet'
 import ProfileDetail from './pages/ProfileDetail/ProfileDetail'
 
 // components
-import NavBar from './components/NavBar/NavBar'
+import BasicNav from './components/BasicNav/BasicNav'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
@@ -64,7 +64,7 @@ const App = () => {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <BasicNav user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
