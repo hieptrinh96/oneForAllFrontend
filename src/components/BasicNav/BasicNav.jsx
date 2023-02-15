@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom'
 import styles from './BasicNav.module.css'
-import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+
 const BasicNav = ({ user, handleLogout }) => {
   return (
-    <Navbar expand='lg' bg='light'>
-      <Container>
+    <Navbar expand='false' bg='light' sticky='top'>
         <Navbar.Brand href='/'>OneForAll</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav'/>
         <Navbar.Collapse id='basic-navbar-nav'>
       {user ?
-        <Nav className='me-auto'>
+      <>
+        <Nav className='justify-content-end flex-grow-1 pe-3'>
           <Nav.Link href='/myWallet'>My Wallet</Nav.Link>
           <Nav.Link href='/coins'>All Coins</Nav.Link>
           <NavDropdown title='My Account' id='basic-nav-dropdown'>
@@ -20,6 +20,7 @@ const BasicNav = ({ user, handleLogout }) => {
           <NavDropdown.Item href="" onClick={handleLogout}>Log Out</NavDropdown.Item>
         </NavDropdown>
       </Nav>
+      </>
       :
       <>
           <h2><li><Link to="/login">Log In</Link></li></h2>
@@ -27,7 +28,6 @@ const BasicNav = ({ user, handleLogout }) => {
       </>
       }
       </Navbar.Collapse>
-    </Container>
   </Navbar>
   )
 }
