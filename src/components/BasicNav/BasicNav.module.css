@@ -8,3 +8,12 @@
 a {
   text-decoration: none;
 }
+
+.appName {
+  font-size: 2em;
+  font-weight:bold;
+}
+
+.navContainer {
+  width: fit-content;
+}

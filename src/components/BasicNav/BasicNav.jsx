@@ -10,12 +10,12 @@ const BasicNav = ({ user, handleLogout }) => {
   return (
     <Navbar expand='false' bg='light' sticky='top' className='mb-3'>
       <Container fluid>
-        <Navbar.Brand href='/'>OneForAll</Navbar.Brand>
-        <Navbar.Toggle aria-controls='offcanvasNavbvar'/>
+        <Navbar.Brand href='/' className={styles.appName}>OneForAll</Navbar.Brand>
+        <Navbar.Toggle aria-controls='offcanvasNavbvar-expand-sm'/>
         <Navbar.Offcanvas placement='end'>
       {user ?
       <>
-          <Offcanvas.Body>
+          <Offcanvas.Body className={styles.navContainer}>
         <Nav className='justify-content-end flex-grow-1 pe-3'>
           <Nav.Link href='/myWallet'>My Wallet</Nav.Link>
           <Nav.Link href='/coins'>All Coins</Nav.Link>
